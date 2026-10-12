@@ -1,3 +1,4 @@
+import os
 import asyncio
 import json
 from fastapi import FastAPI, HTTPException, Query
@@ -418,3 +419,4 @@ async def update_settings(payload: SettingsUpdate):
 frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"))
 if os.path.exists(frontend_dist):
     app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+
